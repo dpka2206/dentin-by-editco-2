@@ -1,7 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "editco_clinic/dist",
-  "installCommand": "npm install && npm run postinstall",
+  "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
     {

@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentino Oral Experts - Advanced Dental Clinic</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#1e88e5', secondary: '#ff6e40' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17219771858">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17219771858');
+    </script>
+
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .custom-checkbox:hover input~.checkmark {
+            border-color: #ccc;
+        }
+
+        .custom-checkbox input:checked~.checkmark {
+            background-color: #1e88e5;
+            border-color: #1e88e5;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .custom-checkbox input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #1e88e5;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .custom-radio {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .custom-radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .radio-mark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+        }
+
+        .custom-radio:hover input~.radio-mark {
+            border-color: #ccc;
+        }
+
+        .custom-radio input:checked~.radio-mark {
+            border-color: #1e88e5;
+        }
+
+        .radio-mark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .custom-radio input:checked~.radio-mark:after {
+            display: block;
+        }
+
+        .custom-radio .radio-mark:after {
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #1e88e5;
+        }
+
+        .custom-range {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #1e88e5;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .custom-range::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: #1e88e5;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-card:hover .doctor-overlay {
+            opacity: 1;
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            min-width: 120px;
+        }
+
+        .language-selector:hover .language-options {
+            display: block;
+        }
+    </style>
+    <style>
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .modal-backdrop.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Appointment Modal -->
+    <div id="appointment-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center">
+        <div class="modal-content bg-gray-800 rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 class="text-xl font-semibold text-gray-900">Book Your Appointment</h3>
+                <button id="close-appointment-modal" class="text-gray-400 hover:text-gray-500">
+                    <i class="ri-close-line ri-lg"></i>
+                </button>
+            </div>
+            <form id="appointment-form"
+                action="https://script.google.com/u/0/home/projects/1XDSwAClDCOPH8PGmhNIRtgYAGUfzau82IxoBQlJDgRNnyyn0_i7zv__a/edit"
+                method="POST" class="p-6">
+                <div class="space-y-4">
+                    <div>
+                        <label for="appointment-name" class="block text-sm font-medium text-white mb-1">Full
+                            Name</label>
+                        <input type="text" id="appointment-name" name="name" required maxlength="500"
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded focus:outline-none focus:border-primary text-sm">
+                    </div>
+                    <div>
+                        <label for="appointment-phone" class="block text-sm font-medium text-white mb-1">Phone
+                            Number</label>
+                        <input type="tel" id="appointment-phone" name="phone" required
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded focus:outline-none focus:border-primary text-sm">
+                    </div>
+                    <div>
+                        <label for="appointment-email" class="block text-sm font-medium text-white mb-1">Email
+                            Address</label>
+                        <input type="email" id="appointment-email" name="email" required
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded focus:outline-none focus:border-primary text-sm">
+                    </div>
+                    <div>
+                        <label for="appointment-service" class="block text-sm font-medium text-white mb-1">Select
+                            Service</label>
+                        <select id="appointment-service" name="service" required
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded focus:outline-none focus:border-primary text-sm appearance-none bg-white pr-8"
+                            style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22><path fill=%22%23a0aec0%22 d=%22M7 10l5 5 5-5z%22/></svg>'); background-repeat: no-repeat; background-position: right 10px center;">
+                            <option value="">Choose a service</option>
+                            <option value="dental-implants">Dental Implants</option>
+                            <option value="orthodontics">Orthodontics</option>
+                            <option value="root-canal">Root Canal Treatment</option>
+                            <option value="cosmetic-dentistry">Cosmetic Dentistry</option>
+                            <option value="pediatric-dentistry">Pediatric Dentistry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="appointment-date" class="block text-sm font-medium text-white mb-1">Preferred
+                            Date</label>
+                        <input type="date" id="appointment-date" name="date" required
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded focus:outline-none focus:border-primary text-sm">
+                    </div>
+                    <div>
+                        <label for="appointment-time" class="block text-sm font-medium text-white mb-1">Preferred
+                            Time</label>
+                        <select id="appointment-time" name="time" required
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded focus:outline-none focus:border-primary text-sm appearance-none bg-white pr-8"
+                            style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=%22https://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22><path fill=%22%23a0aec0%22 d=%22M7 10l5 5 5-5z%22/></svg>'); background-repeat: no-repeat; background-position: right 10px center;">
+                            <option value="">Select time</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <button type="submit"
+                        class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition duration-300 whitespace-nowrap">
+                        Confirm Booking
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo + Nav -->
+            <div class="flex items-center">
+                <a href="./index.html">
+                    <img src="https://static.readdy.ai/image/4c54787fd2047152d108467e5113439e/7af86d792c09289b3ae34fc4ad502412.jpeg"
+                        alt="Dentino Oral Experts" class="h-14 w-auto mr-4" />
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex space-x-6">
+                <a href="./index.html" class="text-gray-900 hover:text-primary font-medium">Home</a>
+                <a href="./services/index.html" class="text-gray-900 hover:text-primary font-medium">Services</a>
+                <a href="./about-us/index.html" class="text-gray-900 hover:text-primary font-medium">About Us</a>
+                <a href="./doctors/index.html" class="text-gray-900 hover:text-primary font-medium">Doctors</a>
+                <a href="./testimonials/index.html"
+                    class="text-gray-900 hover:text-primary font-medium">Testimonials</a>
+                <a href="./contact-us/index.html" class="text-gray-900 hover:text-primary font-medium">Contact</a>
+            </nav>
+
+            <!-- Call & Button -->
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center mr-4">
+                    <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+                        <i class="ri-phone-line text-primary ri-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500">Call Us</p>
+                        <p class="text-sm font-semibold">95150 84487</p>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu toggle -->
+                <button id="mobile-menu-button" class="lg:hidden text-gray-800">
+                    <i class="ri-menu-line ri-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden px-4 pb-4">
+            <nav class="flex flex-col space-y-3">
+                <a href="./index.html" class="text-gray-900 hover:text-primary font-medium">Home</a>
+                <a href="./services/index.html" class="text-gray-900 hover:text-primary font-medium">Services</a>
+                <a href="./about-us/index.html" class="text-gray-900 hover:text-primary font-medium">About Us</a>
+                <a href="./doctors/index.html" class="text-gray-900 hover:text-primary font-medium">Doctors</a>
+                <a href="./testimonials/index.html"
+                    class="text-gray-900 hover:text-primary font-medium">Testimonials</a>
+                <a href="./contact-us/index.html" class="text-gray-900 hover:text-primary font-medium">Contact</a>
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Script to toggle menu -->
+    <script>
+        const toggleBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        toggleBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pt-24 relative bg-cover bg-center"
+        style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20dental%20clinic%20interior%20with%20Indian%20dental%20professionals%20in%20white%20coats%20attending%20to%20patients%2C%20bright%20and%20clean%20environment%20with%20advanced%20dental%20equipment%2C%20warm%20lighting%2C%20professional%20atmosphere%2C%20high-end%20dental%20chairs%2C%20with%20natural%20daylight%20coming%20through%20windows%2C%20showing%20a%20mix%20of%20traditional%20Indian%20elements%20and%20modern%20medical%20technology&width=1920&height=800&seq=1&orientation=landscape');">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-900/40"></div>
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <div class="flex items-center mb-6">
+                        <div class="w-20 h-20 rounded-full overflow-hidden mr-4 border-2 border-white/20">
+                            <img src="./assets/Dr.-Surya.jpg" alt="Dr. Suryanarayan Sharma"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h3 class="text-white/90 text-lg font-medium">Dr. Suryanarayan Sharma</h3>
+                            <p class="text-white/70">MDS - Chief Dental Surgeon</p>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">Experience Truly <br><br>
+                         Painless
+                        Dental Care</h1>
+                    <p class="text-white/90 text-lg mb-8 max-w-lg">Advanced pain-free treatments with cutting-edge
+                        technology and sedation options. We make dental visits comfortable and anxiety-free.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        
+
+                        <a href="tel:+919515084487"><button
+                                class="bg-primary text-white px-8 py-3.5 rounded-button font-medium hover:bg-primary transition duration-300 whitespace-nowrap flex items-center justify-center">
+                                <i class="ri-phone-line mr-2"></i> Call Now
+                            </button></a>
+                    </div>
+                    <div class="flex items-center mt-10 space-x-8">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-white">15+</p>
+                            <p class="text-white/80 text-sm">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-white">20k+</p>
+                            <p class="text-white/80 text-sm">Happy Patients</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-white">50+</p>
+                            <p class="text-white/80 text-sm">Dental Experts</p>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://sheetdb.io/s/f/y8mmuf0ttoqp8.js"></script>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pain-Free Dental Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Experience our gentle approach to dentistry with advanced
+                    pain management techniques and sedation options for a comfortable, anxiety-free visit.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-01.jpg" alt="Dental Implants"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Scaling & Polishing</h3>
+                    <p class="text-gray-600 mb-4">It is a simple, painless, non-surgical procedure simply called teeth
+                        cleaning in which we remove the(yellow brown deposits)
+                        calculus and stains that are present on the tooth surface using an ultrasonic scaler followed by
+                        polishing using polishing paste.
+                        This treatment process helps in restoring gum health and thus better oral hygiene.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-02.jpg" alt="Orthodontics"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Root Canal Treatment</h3>
+                    <p class="text-gray-600 mb-4">It is a treatment recommended to remove the inflamed /infected pulp
+                        using local anesthesia,
+                        clean and disinfect the root canal, followed by filling & sealing to prevent reinfection of the
+                        tooth.
+                        RCT treated tooth should be covered with a cap (crown) to protect it from oral environment.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-03.jpg" alt="Root Canal" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Implants</h3>
+                    <p class="text-gray-600 mb-4">It is the best treatment option for replacing the missing teeth.
+                        It is a surgical procedure in which a titanium implant is placed in the bone of the missing
+                        teeth or damaged tooth that cannot be preserved with RCT.
+                        Dental implants acts as an artificial root upon which the dental crown (cap) is placed.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-04.webp" alt="Cosmetic Dentistry"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Extractions</h3>
+                    <p class="text-gray-600 mb-4">It is a process of removing the severely damaged/ broken tooth, root
+                        pieces, retained primary tooth, and extra teeth using local anesthesia.
+                        preventing further infection and pain caused due to infection.
+                        Permanent teeth except wisdom should be replaced after extraction.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-05.jpg" alt="Pediatric Dentistry"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Wisdom Teeth Complaints</h3>
+                    <p class="text-gray-600 mb-4">These are the last teeth to erupt in the oral cavity hence may not
+                        have enough space resulting in impaction.
+                        Improperly erupted wisdom teeth may cause pain, swollen gums, food lodgment, tooth decay, damage
+                        to adjacent teeth, jaw pain etc.
+                        good to remove such teeth to get relief from pain and prevent damage to adjacent teeth.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-06(b).jpg" alt="Oral Surgery"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Braces</h3>
+                    <p class="text-gray-600 mb-4">Dental Braces are used for the correction of irregularly placed,
+                        crowded teeth, gaps between teeth, forwardly placed teeth etc..
+                        using metal or ceramic or self-ligating braces etc Patient need to visit the clinic to get the
+                        treatment from the orthodontist once in every month.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-06.webp" alt="Oral Surgery"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Invisible Aligners</h3>
+                    <p class="text-gray-600 mb-4">Invisible aligners are extremely less noticeable thin plastic shells,
+                        custom made to fit your teeth
+                        as you wear them apply gentle and contact forces on teeth to align irregularly placed teeth for
+                        all age groups depending on the bone strength.
+                        Our doctors will take your opg x-ray to understand the strength of your bone and can arrange
+                        a treatment plan</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-07.webp" alt="Periodontal Treatment"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental OPG X-Ray</h3>
+                    <p class="text-gray-600 mb-4">OPGs (Orthopantograms) are a type of dental x-ray that produces a wide
+                        2-dimensional dental x-ray of upper and lower teeth and adjacent structures like bone sinuses
+                        etc.
+                        OPGs are used in routine dental checkups check the oral health.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-08.webp" alt="Preventive Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Teeth Whitening</h3>
+                    <p class="text-gray-600 mb-4">It is a process that lightens the color of the teeth using chemical
+                        agents.
+                        This process helps to remove both internal and external stains and helps to improve the shade of
+                        the teeth.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-09.webp" alt="Preventive Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Cavity Fillings</h3>
+                    <p class="text-gray-600 mb-4">It is a process in which a decayed part of the teeth is removed, then
+                        fills the teeth with filling materials.
+                        Cavities not involving pulp (painless) of the tooth can be treated by fillings.
+                        It is better to do a filling in case of small cavities to prevent food lodgment and further
+                        damage to teeth.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-10.jpg" alt="Preventive Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Lost Tooth Replacement Bridges</h3>
+                    <p class="text-gray-600 mb-4">In case of a missing tooth, it is better to replace as early as
+                        possible to avoid drifting of lateral and opposing arch teeth.
+                        If a or multiple teeth are missing, with the support of adjacent teeth, missing teeth can be
+                        replaced, this is called dental bridge.
+                        Recommended if implants are not indicated.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-11.webp" alt="Preventive Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Gum Surgeries</h3>
+                    <p class="text-gray-600 mb-4">Gum surgeries address various periodontal issues, such as gum
+                        recession, gum disease, and tissue regeneration.
+                        Procedures range from gum grafts to flap surgery, aiming to restore oral health and aesthetics.
+                    </p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-12.jpg" alt="Preventive Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Broken Teeth Management</h3>
+                    <p class="text-gray-600 mb-4">Depending on the amount of loss of tooth structure, broken teeth can
+                        be managed with composite filling (less than 3mm fracture) veneers or crowns in case of more
+                        loss.
+                        Broken piece can also be fixed if the lost part is intact.</p>
+
+                </div>
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-13.webp" alt="Preventive Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Pediatric Dentistry</h3>
+                    <p class="text-gray-600 mb-4">It includes all the treatments done in children like dental fillings,
+                        pulp therapy if the cavity is too big, extraction, cleft lip and cleft palate surgeries,
+                        extraction of teeth present at the time of birth (natal neonatal teeth).</p>
+
+                </div>
+
+                <div
+                    class="service-card bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="w-auto h-auto mb-6 overflow-hidden rounded-full">
+                        <img src="./assets/services-img/img-14.webp" alt="Preventive Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Laser Treatment</h3>
+                    <p class="text-gray-600 mb-4">Dental lasers are used for soft tissue surgeries, RCT,
+                        hypersensitivity, teeth whitening, disinfection and stimulation of soft tissues after surgical
+                        procedures.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section id="about" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <img src="./assets/whychooseus-img.jpg" alt="Modern Dental Clinic" class="rounded-lg shadow-lg">
+                </div>
+                <div class="lg:w-1/2 lg:pl-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose Our Pain-Free Dentistry?
+                    </h2>
+                    <p class="text-gray-600 mb-8">We specialize in anxiety-free, painless dental care using the latest
+                        sedation techniques and gentle procedures. Our priority is your comfort and peace of mind.</p>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                <i class="ri-award-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Sedation Dentistry Experts</h3>
+                                <p class="text-gray-600">Our specialists are certified in various sedation techniques to
+                                    ensure completely pain-free and anxiety-free treatments.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                <i class="ri-device-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Pain-Free Technology</h3>
+                                <p class="text-gray-600">State-of-the-art equipment and techniques designed for maximum
+                                    comfort and minimal invasiveness.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                <i class="ri-heart-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Comfort-First Approach</h3>
+                                <p class="text-gray-600">From calming environment to gentle procedures, we ensure every
+                                    aspect of your visit is anxiety-free and comfortable.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                <i class="ri-wallet-3-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Affordable Excellence</h3>
+                                <p class="text-gray-600">We offer high-quality dental care at reasonable prices with
+                                    flexible payment options and insurance coverage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="./about-us/index.html" data-readdy="true" class="inline-block">
+                            <button
+                                class="bg-primary text-white px-8 py-3.5 rounded-button font-medium hover:bg-blue-600 transition duration-300 whitespace-nowrap">
+                                Learn More About Us
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Statistics Section -->
+
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-white mb-2">15+</h3>
+                    <p class="text-white/80">Years of Experience</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-white mb-2">50+</h3>
+                    <p class="text-white/80">Dental Specialists</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-white mb-2">20K+</h3>
+                    <p class="text-white/80">Happy Patients</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-white mb-2">30+</h3>
+                    <p class="text-white/80">Dental Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Expert Doctors</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our team of highly qualified dental specialists is committed
+                    to providing exceptional care for all your dental needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="doctor-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <img src="./assets/Dr.-Surya.jpg" alt="Dr. Surya Sharma"
+                        class="w-full h-64 object-cover object-top">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. Suryanarayan Sharma</h3>
+                        <p class="text-primary font-medium">Oral & Maxillofacial Pathologist and Implantologist</p>
+                        <p class="text-gray-600 text-sm mt-2">MDS, 12+ years experience in orthodontics and dental
+                            alignment procedures.</p>
+                    </div>
+                    <div
+                        class="doctor-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <div class="text-center p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Dr. Suryanarayan Sharma</h3>
+                            <p class="text-white/90 mb-4">Specializes in braces, Invisalign, and complex orthodontic
+                                cases for all age groups.</p>
+                            <a href="./book-now/index.html"><button
+                                    class="  bg-white text-primary px-6 py-2.5 rounded-button font-medium hover:bg-gray-100 transition duration-300 whitespace-nowrap">
+                                    Book Appointment
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <img src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20an%20Indian%20female%20dentist%20in%20her%2030s%20wearing%20a%20white%20coat%2C%20confident%20smile%2C%20professional%20setting%2C%20high%20quality%20studio%20lighting%2C%20clean%20background%2C%20professional%20headshot%20style&width=400&height=500&seq=4&orientation=portrait"
+                        alt="Dr. Priya Patel" class="w-full h-64 object-cover object-top">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. Rekha Talpa</h3>
+                        <p class="text-primary font-medium">Cosmetic Dental Surgeon</p>
+                        <p class="text-gray-600 text-sm mt-2">MDS, 10+ years experience in cosmetic and restorative
+                            dentistry.</p>
+                    </div>
+                    <div
+                        class="doctor-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <div class="text-center p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Dr. Rekha Talpa</h3>
+                            <p class="text-white/90 mb-4">Expert in smile makeovers, veneers, teeth whitening, and
+                                aesthetic dental procedures.</p>
+                            <a href="./book-now/index.html"><button
+                                    class="bg-white text-primary px-6 py-2.5 rounded-button font-medium hover:bg-gray-100 transition duration-300 whitespace-nowrap">
+                                    Book Appointment
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <img src=" https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20an%20Indian%20female%20dentist%20in%20her%2040s%20wearing%20a%20white%20coat%2C%20confident%20smile%2C%20professional%20setting%2C%20high%20quality%20studio%20lighting%2C%20clean%20background%2C%20professional%20headshot%20style&width=400&height=500&seq=6&orientation=portrait"
+                        alt="Dr. Vikram Mehta" class="w-full h-64 object-cover object-top">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. Sreeja</h3>
+                        <p class="text-primary font-medium">Cosmetic Dental Surgeon</p>
+                        <p class="text-gray-600 text-sm mt-2">MDS, 15+ years experience in oral and maxillofacial
+                            surgery.</p>
+                    </div>
+                    <div
+                        class="doctor-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <div class="text-center p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Dr. Sreeja</h3>
+                            <p class="text-white/90 mb-4">Specializes in dental implants, wisdom teeth extraction, and
+                                complex oral surgeries.</p>
+                            <a href="./book-now/index.html"><button
+                                    class="bg-white text-primary px-6 py-2.5 rounded-button font-medium hover:bg-gray-100 transition duration-300 whitespace-nowrap">
+                                    Book Appointment
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <img src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20an%20Indian%20male%20dentist%20in%20his%2050s%20wearing%20a%20white%20coat%2C%20confident%20smile%2C%20professional%20setting%2C%20high%20quality%20studio%20lighting%2C%20clean%20background%2C%20professional%20headshot%20style&width=400&height=500&seq=5&orientation=portrait"
+                        alt="Dr. Anjali Gupta" class="w-full h-64 object-cover object-top">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. Sandeep Adiga</h3>
+                        <p class="text-primary font-medium">Orthodontist</p>
+                        <p class="text-gray-600 text-sm mt-2">MDS, 8+ years experience in root canal treatments and
+                            dental pulp therapies.</p>
+                    </div>
+                    <div
+                        class="doctor-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <div class="text-center p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Dr. Sandeep Adiga</h3>
+                            <p class="text-white/90 mb-4">Expert in painless root canal treatments, dental pulp
+                                therapies, and dental emergencies.</p>
+                            <a href="./book-now/index.html"> <button
+                                    class="bg-white text-primary px-6 py-2.5 rounded-button font-medium hover:bg-gray-100 transition duration-300 whitespace-nowrap">
+                                    Book Appointment
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Facility Showcase -->
+    <section id="Facility" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our State-of-the-Art Facility</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Experience dental care in our modern clinic equipped with the
+                    latest technology for accurate diagnosis and effective treatments.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./assets/services-img/showcase-01.jpg" alt="Reception Area"
+                        class="w-full h-64 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Welcoming Reception</h3>
+                        <p class="text-gray-600">Our comfortable reception area ensures you feel relaxed from the moment
+                            you arrive.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./assets/services-img/showcase-02.jpg" alt="Treatment Room"
+                        class="w-full h-64 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Modern Treatment Rooms</h3>
+                        <p class="text-gray-600">Equipped with advanced dental chairs and technology for comfortable
+                            treatments.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./assets/services-img/showcase-03.jpg" alt="Imaging Center"
+                        class="w-full h-64 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Advanced Imaging Center</h3>
+                        <p class="text-gray-600">Digital X-rays and 3D imaging for precise diagnosis and treatment
+                            planning.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#Facility"><button
+                        class="bg-primary text-white px-8 py-3.5 rounded-button font-medium hover:bg-blue-600 transition duration-300 whitespace-nowrap">
+                        Take a Virtual Tour
+                    </button></a>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from our satisfied patients about their experience at
+                    Dentino Oral Experts.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://readdy.ai/api/search-image?query=Portrait%20of%20smiling%20Indian%20woman%20in%20her%2030s%2C%20casual%20attire%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression%2C%20professional%20headshot%20style&width=100&height=100&seq=10&orientation=squarish"
+                            alt="Anita Desai" class="w-16 h-16 rounded-full object-cover object-top mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Rajni Singh</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"I recently visited Dr. Surya for a re-root canal treatment, and I am very
+                        much happy with the experience.
+                        From the very first consultation, they were thorough, explained every step clearly, and made
+                        sure I was comfortable throughout the process.
+                        The procedure itself was smooth and surprisingly painless.
+                        The staff was warm and professional. I'm truly grateful for them. Highly recommended for anyone
+                        looking for skilled and compassionate dental work!"</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="./assets/testimonial-img-2.png" alt="Rahul Verma"
+                            class="w-16 h-16 rounded-full object-cover object-top mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Melkio Regis</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Dr. SuryaNarayana is an exceptional dentist! Their professionalism, gentle
+                        approach, and clear explanations made me feel completely at ease throughout the entire process.
+                        They genuinely care about their patients' comfort and take time to answer all questions."</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="./assets/testimonial-img-3.png" alt="Meera Kapoor"
+                            class="w-16 h-16 rounded-full object-cover object-top mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Rahul Dhiman</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"I got rct and fillings done at the clinic. Dr Surya was very proactive and
+                        helpful during the whole treatment.
+                        My tooth crown fitting was proper but there was some gap so he got that fixed in 2-3 days.
+                        Overall my experience was positive and definitely recommend others as well."</p>
+                </div>
+
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="./assets/testimonial-img-4.png" alt="Meera Kapoor"
+                            class="w-16 h-16 rounded-full object-cover object-top mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Prasanthi Tamma</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"I want to commend DR. Surya for the excellent work you've done with my
+                        braces.
+                        Your expertise and dedication have truly made a positive impact on my dental treatment
+                        journey."made me smile more confidentally ,
+                        I have shared my before and after treatment pictures."</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a
+                    href="https://www.google.com/search?sca_esv=3865a5c24f38e491&sxsrf=AE3TifOCxgDiHRr4Ws93tGpNTmgPyGVO2w:1749467495768&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EytgGMyiwrTstCoynAoEZg-y7LApMQq3Yf4r-7Q6hz85IYgP5NFh0RGSx8gWlfgU2NIt1szs5Bm57LMbr6Iwt0G_1LK9r0UbhwA8Eo735r_ks6R91ArlSAuzsVg6kk5R19LNGL9OHVF6Np_EzSXO5l-YdfbM6XckA9Ftn7yWCwuXsC2fVZYZoOcH9ihwzrJX7xvFo7Ji_0UZg5iH5s1EwZZgfC9djNnLhxE2MRBszfuwqXMJ-w%3D%3D&q=DENTIN+Dental+clinic+Best+dentist+for+Dental+implants+%7C+Invisalign,+V+clear+aligners,+Root+Canal,+Braces,+Teeth+Cleaning+Reviews&sa=X&ved=2ahUKEwiRoIalmuSNAxV7xzgGHVcBD9EQ0bkNegQIKhAE&biw=1528&bih=738&dpr=1.25"><button
+                        class="bg-white text-primary border border-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition duration-300 whitespace-nowrap">
+                        Read More Testimonials
+                    </button></a>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Smile?</h2>
+            <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">Schedule your appointment today and take the first
+                step towards a healthier, more beautiful smile.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="./book-now/index.html"><button
+                        class="bg-white text-primary px-8 py-3.5 rounded-button font-medium hover:bg-gray-100 transition duration-300 whitespace-nowrap">
+                        Book Your Appointment
+                    </button></a>
+
+                <a href="tel:+919515084487"><button
+                        class="bg-transparent text-white border border-white px-8 py-3.5 rounded-button font-medium hover:bg-white/10 transition duration-300 whitespace-nowrap">
+                        Contact Us
+                    </button></a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to schedule your appointment? Reach
+                    out to us through any of these channels.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+                <div class="lg:col-span-1">
+                    <div class="bg-primary p-6 rounded-lg  items-center justify-center shadow-md">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-map-pin-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-black mb-1">Our Location</h3>
+                                    <p class="text-white">opp. Jayabheri The Nirvana and Art boutique
+                                        hotel<br>Gowlidoddy, Hyderabad, Telangana 500075</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-phone-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-black mb-1">Phone Numbers</h3>
+                                    <p class="text-white">Appointments & Emergency: <br>95150 84487</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-time-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-black mb-1">Working Hours</h3>
+                                    <p class="text-white">
+                                        Monday: 9:00 AM - 9:00 PM<br>
+                                        Tuesday: 9:00 AM - 9:00 PM<br>
+                                        Wednesday: 9:30 AM - 9:00 PM<br>
+                                        Thursday: 9:00 AM - 9:00 PM<br>
+                                        Friday: 9:00 AM - 9:00 PM<br>
+                                        Saturday: 9:00 AM - 9:00 PM<br>
+                                        Sunday: 9:00 AM - 6:00 PM
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-mail-line text-primary ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-black mb-1">Email</h3>
+                                    <p class="text-white">
+                                        info@dentinoralexperts.com<br>appointments@dentinoralexperts.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/suryatvd"
+                                    class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <a href="https://www.instagram.com/drsuryat/"
+                                    class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="ri-youtube-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+ <script src="https://sheetdb.io/s/f/y8mmuf0ttoqp8.js"></script>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section -->
+    <section class="h-96 relative">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.626600511536!2d78.3242791!3d17.4296983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93118f9a589d%3A0x4e0609f4b87a566d!2sDENTIN%20Dental%20clinic%20Best%20dentist%20for%20Dental%20implants%20%7C%20Invisalign%2C%20V%20clear%20aligners%2C%20Root%20Canal%2C%20Braces%2C%20Teeth%20Cleaning!5e0!3m2!1sen!2sin!4v1749275701855!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Find Us Here</h3>
+            <p class="text-gray-600">opp. Jayabheri The Nirvana and Art boutique hotel<br>Gowlidoddy, Hyderabad,
+                Telangana 500075</p>
+            <button
+                class="mt-4 bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition duration-300 whitespace-nowrap text-sm"
+                onclick="window.open('https://goo.gl/maps/YOUR_GOOGLE_MAPS_LINK', '_blank')">
+                Get Directions
+            </button>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="./assets/dental footer 180x120.png" alt="Dentin Oral Experts" class="h-12 mb-6">
+                    <p class="text-gray-400 mb-6">Providing exceptional dental care with advanced technology and
+                        compassionate service since 2010.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/suryatvd"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/drsuryat/"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="./services/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="./about-us/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">About Us</a>
+                        </li>
+                        <li><a href="./doctors/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Our
+                                Doctors</a></li>
+                        <li><a href="./contact-us/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="./services/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Dental
+                                Scaling & Polishing</a></li>
+                        <li><a href="./services/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Root
+                                Canal Treatment</a>
+                        </li>
+                        <li><a href="./services/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Dental
+                                Implants</a></li>
+                        <li><a href="./services/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Dental
+                                Extraction</a></li>
+                        <li><a href="./services/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Cavity
+                                Fillings</a></li>
+                        <li><a href="./services/index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Lost
+                                Tooth Replacement</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for dental tips and special offers.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 w-full rounded-l border-none focus:outline-none text-gray-800">
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-300 whitespace-nowrap">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">We Accept</h4>
+                        <div class="flex space-x-3">
+                            <i class="ri-visa-fill text-2xl text-gray-400">visa card</i>
+                            <i class="ri-mastercard-fill text-2xl text-gray-400">Mastercaed</i>
+                            <i class="ri-paypal-fill text-2xl text-gray-400">paypal</i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Dentino Oral Experts. All rights reserved.</p>
+                    <span class="text-white font-semibold"> Powered by Growthlink <a href="https://growthlink.in/"><img
+                                src="./assets/200x120.png" alt="Powered by Growthlink"></span></a>
+                    <div class="flex space-x-6">
+                        <a href="./privacy-policy/index.html"
+                            class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy
+                            Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of
+                            Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900/95 z-50 hidden">
+        <div class="flex justify-end p-4">
+            <button id="close-menu" class="text-white w-10 h-10 flex items-center justify-center">
+                <i class="ri-close-line ri-2x"></i>
+            </button>
+        </div>
+        <div class="flex flex-col items-center justify-center h-full">
+            <nav class="flex flex-col space-y-6 text-center">
+                <a href="./index.html" class="text-white text-xl font-medium hover:text-primary">Home</a>
+                <a href="./services/index.html" class="text-white text-xl font-medium hover:text-primary">Services</a>
+                <a href="./about-us/index.html" class="text-white text-xl font-medium hover:text-primary">About Us</a>
+                <a href="./doctors/index.html" class="text-white text-xl font-medium hover:text-primary">Doctors</a>
+                <a href="./testimonials/index.html"
+                    class="text-white text-xl font-medium hover:text-primary">Testimonials</a>
+                <a href="./contact-us/index.html" class="text-white text-xl font-medium hover:text-primary">Contact</a>
+            </nav>
+            <div class="mt-12">
+                <button
+                    class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-600 transition duration-300 whitespace-nowrap">
+                    Book Appointment
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/919515084487" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-50 hover:bg-[#128C7E] transition-all duration-300">
+        <i class="ri-whatsapp-fill ri-lg"></i>
+    </a>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-24 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+    <!-- Scripts -->
+    <script id="faq-toggle">
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.remove('ri-arrow-down-s-line');
+                icon.classList.add('ri-arrow-up-s-line');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('ri-arrow-up-s-line');
+                icon.classList.add('ri-arrow-down-s-line');
+            }
+        }
+    </script>
+    <script id="mobile-menu-toggle">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.querySelector('.lg\\:hidden');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuButton = document.getElementById('close-menu');
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+            closeMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+            });
+        });
+    </script>
+    <script id="back-to-top">
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = document.getElementById('appointment-form');
+            const formData = new FormData(form);
+
+            fetch('https://script.google.com/macros/s/AKfycbwvM-EtL3kBH20yOV2qWO_gDf9wh0E4xurvAOGjtiRQVlgT9r_oUmptsbpOnvZyRdGKHA/exec', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Form submitted successfully!');
+                        form.reset();
+                    } else {
+                        alert('Error! Something went wrong.');
+                    }
+                })
+                .catch(error => {
+                    alert('Fetch Error: ' + error.message);
+                    console.error(error);
+                });
+        });
+    </script>
+
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = document.getElementById('appointment-form');
+            const formData = new FormData(form);
+
+            fetch('https://script.google.com/macros/s/AKfycbwvM-EtL3kBH20yOV2qWO_gDf9wh0E4xurvAOGjtiRQVlgT9r_oUmptsbpOnvZyRdGKHA/exec', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Form submitted successfully!');
+                        form.reset();
+                    } else {
+                        alert('Error! Something went wrong.');
+                    }
+                })
+                .catch(error => {
+                    alert('Fetch Error: ' + error.message);
+                    console.error(error);
+                });
+        });
+    </script>
+
+</body>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl509529'},{'dcenter':'sg2'},{'cp_id':'10396208'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

@@ -1,0 +1,64 @@
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import { Submission } from "./models/Submission.js";
+
+dotenv.config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const PORT = process.env.PORT || 5001;
+const MONGO_URI = process.env.MONGO_URI;
+
+if (!MONGO_URI) {
+  console.error("FATAL ERROR: MONGO_URI is missing in .env");
+  process.exit(1);
+}
+
+mongoose.connect(MONGO_URI)
+  .then(() => console.log("Connected to MongoDB Server"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+app.post("/api/contact", async (req, res) => {
+  try {
+    const { name, phone, email, service, date, time } = req.body;
+    
+    // Simple validation
+    if (!name || !phone || !service) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const newSubmission = new Submission({
+      name, phone, email, service, date, time
+    });
+
+    await newSubmission.save();
+
+    console.log("New submission saved for", name);
+
+    // Note: Email sending is skipped for now, will implement Data saving & Admin UI first
+
+    res.status(201).json({ message: "Submission created successfully", success: true });
+  } catch (error) {
+    console.error("Error creating submission:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.get("/api/submissions", async (req, res) => {
+  try {
+    // Sort by newest first
+    const submissions = await Submission.find().sort({ createdAt: -1 });
+    res.status(200).json(submissions);
+  } catch (error) {
+    console.error("Error fetching submissions:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Express API running on port ${PORT}`);
+});

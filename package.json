@@ -1,0 +1,11 @@
+{
+  "name": "editco-medical",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix editco_clinic run dev",
+    "build": "npm --prefix editco_clinic run build",
+    "preview": "npm --prefix editco_clinic run preview",
+    "lint": "npm --prefix editco_clinic run lint",
+    "test": "npm --prefix editco_clinic run test"
+  }
+}
